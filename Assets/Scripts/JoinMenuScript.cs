@@ -12,6 +12,6 @@ public class JoinMenuScript : MonoBehaviour
 
     public void clickHostButton()
     {
-        //gameObject.SetActive(false);
+        gameObject.SetActive(false);
     }
 }
