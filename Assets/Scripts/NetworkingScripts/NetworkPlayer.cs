@@ -1,8 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Unity.Netcode;
-using JetBrains.Annotations;
 
 public class NetworkPlayer : NetworkBehaviour
 {
@@ -11,7 +8,6 @@ public class NetworkPlayer : NetworkBehaviour
     public Transform lefthand;
     public Transform righthand;
     public Renderer[] meshToDisable;
-    public GameObject[] weapons;
 
     public override void OnNetworkSpawn()
     {
@@ -27,12 +23,7 @@ public class NetworkPlayer : NetworkBehaviour
     void Update()
     {
         if(IsOwner)
-        {
-            for(int i = 0; i < weapons.Length; i++)
-            {
-                weapons[i].SetActive(VRRigReference.Singleton.Weapons[i].activeSelf);
-            }
-            
+        {   
             root.position = VRRigReference.Singleton.root.position;
             root.rotation = VRRigReference.Singleton.root.rotation;
 

@@ -612,13 +612,11 @@ MonoBehaviour:
   lefthand: {fileID: 2912440139581542766}
   righthand: {fileID: 7402679445904551584}
   meshToDisable:
-  - {fileID: 0}
-  - {fileID: 0}
   - {fileID: 5932977787699503673}
   - {fileID: 149546357746042833}
-  - {fileID: 0}
-  - {fileID: 0}
-  weapons: []
+  - {fileID: 8856874231079162742}
+  - {fileID: 4438698283806692876}
+  - {fileID: 4580763519132468267}
 --- !u!114 &4889523186091076581
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -660,7 +658,7 @@ PrefabInstance:
     - target: {fileID: 109434732392105323, guid: 65847589f926b734d9eaed6e25f0046b, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 365bcf0f02b400e489f6bc5bc3c8d4bb, type: 2}
+      objectReference: {fileID: 2100000, guid: 3290c1a20c321e04aa1b09a4553157de, type: 2}
     - target: {fileID: 109434732395284481, guid: 65847589f926b734d9eaed6e25f0046b, type: 3}
       propertyPath: m_Layer
       value: 7
@@ -1106,7 +1104,7 @@ PrefabInstance:
     - target: {fileID: 5686134208196863108, guid: 1fd3a7c43c8190f4d8c167ebde694364, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 365bcf0f02b400e489f6bc5bc3c8d4bb, type: 2}
+      objectReference: {fileID: 2100000, guid: 3290c1a20c321e04aa1b09a4553157de, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

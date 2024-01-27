@@ -1,7 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.ComponentModel.Design;
 using UnityEngine;
 
 public class VRRigReference : MonoBehaviour
@@ -12,7 +8,6 @@ public class VRRigReference : MonoBehaviour
     public Transform head;
     public Transform lefthand;
     public Transform righthand;
-    public GameObject[] Weapons;
 
     private void Awake()
     {
