@@ -34,14 +34,14 @@ public class SpellCasting : MonoBehaviour
         if (CastingButton.action.WasPressedThisFrame())
         {
             if (_activeSpell != null) 
-                _activeSpell.TriggerPressCallback();
+                _activeSpell.TriggerPressCallback(this);
             else
                 StartCasting();
         }
         else if (CastingButton.action.WasReleasedThisFrame())
         {
             if (_activeSpell != null)
-                _activeSpell.TriggerReleaseCallback();
+                _activeSpell.TriggerReleaseCallback(this);
             else
                 StopCasting();
         }
@@ -134,7 +134,7 @@ public class SpellCasting : MonoBehaviour
         SpellNode spellNode = other.gameObject.GetComponent<SpellNode>();
         if (spellNode == null) return;
 
-        if ((float)(DateTime.UtcNow - _lastCastTime).TotalSeconds < 0.2f) return; //enure no accidental double tap
+        if ((float)(DateTime.UtcNow - _lastCastTime).TotalSeconds < 0.1f) return; //enure no accidental double tap
         _lastCastTime = DateTime.UtcNow;
 
         if (spellNode.Type == SpellNodeType.Branch)

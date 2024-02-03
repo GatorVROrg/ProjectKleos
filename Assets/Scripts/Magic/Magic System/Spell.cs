@@ -16,11 +16,11 @@ public class Spell : MonoBehaviour
         
     }
 
-    public void TriggerPressCallback() {
+    public virtual void TriggerPressCallback(SpellCasting caster) {
 
     }
 
-    public void TriggerReleaseCallback() {
+    public virtual void TriggerReleaseCallback(SpellCasting caster) {
 
     }
 }
