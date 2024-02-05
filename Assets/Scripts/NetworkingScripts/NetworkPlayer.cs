@@ -1,5 +1,6 @@
 using UnityEngine;
 using Unity.Netcode;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class NetworkPlayer : NetworkBehaviour
 {
@@ -35,6 +36,25 @@ public class NetworkPlayer : NetworkBehaviour
 
             righthand.position = VRRigReference.Singleton.righthand.position;
             righthand.rotation = VRRigReference.Singleton.righthand.rotation;
+        }
+    }
+
+    public void OnSelectGrabbable(SelectEnterEventArgs eventArgs)
+    {
+        if (IsClient && IsOwner)
+        {
+            NetworkObject networkObjectSelected = eventArgs.interactableObject.transform.GetComponent<NetworkObject>();
+            if (networkObjectSelected != null)
+                RequestGrabbableOwnershipServerRpc(OwnerClientId, networkObjectSelected);
+        }
+    }
+
+    [ServerRpc]
+    public void RequestGrabbableOwnershipServerRpc(ulong newOwnerClientId, NetworkObjectReference networkObjectReference)
+    {
+        if (networkObjectReference.TryGet(out NetworkObject networkObject))
+        {
+            networkObject.ChangeOwnership(newOwnerClientId);
         }
     }
 }
