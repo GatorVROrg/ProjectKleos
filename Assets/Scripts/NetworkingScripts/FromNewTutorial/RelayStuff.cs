@@ -13,7 +13,7 @@ public class RelayStuff : MonoBehaviour
     public TMP_Text _joinCodeText;
     public TMP_InputField _joinInput;    
     private UnityTransport _transport;
-    private const int MaxPlayers = 6;
+    private const int MaxPlayers = 5;
 
     private async void Awake() {
         _transport = FindObjectOfType<UnityTransport>();
