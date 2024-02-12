@@ -33,6 +33,7 @@ public class RelayStuff : MonoBehaviour
         _transport.SetHostRelayData(a.RelayServer.IpV4, (ushort)a.RelayServer.Port, a.AllocationIdBytes, a.Key, a.ConnectionData);
         
         NetworkManager.Singleton.StartHost();
+        GameObject.Find("BallSpawner").GetComponent<SpawnBall>().enabled = true;
     }
     
     public async void JoinGame() {        
