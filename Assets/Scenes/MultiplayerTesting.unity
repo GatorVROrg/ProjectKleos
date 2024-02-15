@@ -229,6 +229,63 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &357980473
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 357980476}
+  - component: {fileID: 357980475}
+  - component: {fileID: 357980474}
+  m_Layer: 0
+  m_Name: NetworkManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &357980474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 357980473}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53273fb49ae679544b559b8bf2768963, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &357980475
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 357980473}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e368df3e7eaf9124386a84f718a38570, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &357980476
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 357980473}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &403601645
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -516,103 +573,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!1 &699281752 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8908861688085574476, guid: c29c104753b087d49aeecad9182720d7, type: 3}
-  m_PrefabInstance: {fileID: 1911524844}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &699281757
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 699281752}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 1110027128
-  NetworkManagerOwner: {fileID: 0}
-  <NetworkObjectId>k__BackingField: 0
-  <OwnerClientId>k__BackingField: 0
-  AlwaysReplicateAsRoot: 0
-  <IsPlayerObject>k__BackingField: 0
-  SynchronizeTransform: 1
-  <IsSpawned>k__BackingField: 0
-  <DestroyWithScene>k__BackingField: 0
-  ActiveSceneSynchronization: 0
-  SceneMigrationSynchronization: 1
-  SpawnWithObservers: 1
-  DontDestroyWithOwner: 0
-  AutoObjectParentSync: 1
-  m_CachedNameForMetrics: 
-  SceneOriginHandle: 0
-  NetworkSceneHandle: 0
-  m_SceneOrigin:
-    m_Handle: 0
-  m_CachedParent: {fileID: 0}
-  m_CachedWorldPositionStays: 1
-  m_ChildNetworkBehaviours: []
---- !u!114 &699281758
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 699281752}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea5b3d811810fca45a70e0562cffaccb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  <IsLocalPlayer>k__BackingField: 0
-  <IsOwner>k__BackingField: 0
-  <IsServer>k__BackingField: 0
-  <IsClient>k__BackingField: 0
-  <IsHost>k__BackingField: 0
-  <IsOwnedByServer>k__BackingField: 0
-  <IsSpawned>k__BackingField: 0
-  m_NetworkObject: {fileID: 0}
-  <NetworkObjectId>k__BackingField: 0
-  <NetworkBehaviourId>k__BackingField: 0
-  NetworkBehaviourIdCache: 0
-  <OwnerClientId>k__BackingField: 0
-  m_VarInit: 0
-  <m_TargetIdBeingSynchronized>k__BackingField: 0
-  SyncPositionX: 1
-  SyncPositionY: 1
-  SyncPositionZ: 1
-  SyncRotAngleX: 1
-  SyncRotAngleY: 1
-  SyncRotAngleZ: 1
-  SyncScaleX: 1
-  SyncScaleY: 1
-  SyncScaleZ: 1
-  PositionThreshold: 0.001
-  RotAngleThreshold: 0.01
-  ScaleThreshold: 0.01
-  UseQuaternionSynchronization: 0
-  UseQuaternionCompression: 0
-  UseHalfFloatPrecision: 0
-  InLocalSpace: 0
-  Interpolate: 1
-  SlerpPosition: 0
-  <CanCommitToTransform>k__BackingField: 0
-  m_CachedIsServer: 0
-  m_CachedNetworkManager: {fileID: 0}
-  m_ClientIds:
-  - 0
-  m_CurrentPosition: {x: 0, y: 0, z: 0}
-  m_TargetPosition: {x: 0, y: 0, z: 0}
-  m_CurrentScale: {x: 0, y: 0, z: 0}
-  m_TargetScale: {x: 0, y: 0, z: 0}
-  m_CurrentRotation: {x: 0, y: 0, z: 0, w: 0}
-  m_TargetRotation: {x: 0, y: 0, z: 0}
-  m_MessageName: 
-  m_LastTick: 0
-  m_InternalStatNetVar: {m_NetworkBehaviour: {fileID: 0}, m_IsDirty: 0, <Name>k__BackingField: , m_HasPreviousValue: 0, m_IsDisposed: 0}
 --- !u!1001 &746180100
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1030,10 +990,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1891333676759033303, guid: c29c104753b087d49aeecad9182720d7, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5049404715844940345, guid: c29c104753b087d49aeecad9182720d7, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1078,121 +1034,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 9066513345044576049, guid: c29c104753b087d49aeecad9182720d7, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8908861688085574476, guid: c29c104753b087d49aeecad9182720d7, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 699281757}
-    - targetCorrespondingSourceObject: {fileID: 8908861688085574476, guid: c29c104753b087d49aeecad9182720d7, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 699281758}
-    - targetCorrespondingSourceObject: {fileID: 3913342217085514694, guid: c29c104753b087d49aeecad9182720d7, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2094055618}
-    - targetCorrespondingSourceObject: {fileID: 3913342217085514694, guid: c29c104753b087d49aeecad9182720d7, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2094055619}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c29c104753b087d49aeecad9182720d7, type: 3}
---- !u!1 &2094055613 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3913342217085514694, guid: c29c104753b087d49aeecad9182720d7, type: 3}
-  m_PrefabInstance: {fileID: 1911524844}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2094055618
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2094055613}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 1843997771
-  NetworkManagerOwner: {fileID: 0}
-  <NetworkObjectId>k__BackingField: 0
-  <OwnerClientId>k__BackingField: 0
-  AlwaysReplicateAsRoot: 0
-  <IsPlayerObject>k__BackingField: 0
-  SynchronizeTransform: 1
-  <IsSpawned>k__BackingField: 0
-  <DestroyWithScene>k__BackingField: 0
-  ActiveSceneSynchronization: 0
-  SceneMigrationSynchronization: 1
-  SpawnWithObservers: 1
-  DontDestroyWithOwner: 0
-  AutoObjectParentSync: 1
-  m_CachedNameForMetrics: 
-  SceneOriginHandle: 0
-  NetworkSceneHandle: 0
-  m_SceneOrigin:
-    m_Handle: 0
-  m_CachedParent: {fileID: 0}
-  m_CachedWorldPositionStays: 1
-  m_ChildNetworkBehaviours: []
---- !u!114 &2094055619
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2094055613}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea5b3d811810fca45a70e0562cffaccb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  <IsLocalPlayer>k__BackingField: 0
-  <IsOwner>k__BackingField: 0
-  <IsServer>k__BackingField: 0
-  <IsClient>k__BackingField: 0
-  <IsHost>k__BackingField: 0
-  <IsOwnedByServer>k__BackingField: 0
-  <IsSpawned>k__BackingField: 0
-  m_NetworkObject: {fileID: 0}
-  <NetworkObjectId>k__BackingField: 0
-  <NetworkBehaviourId>k__BackingField: 0
-  NetworkBehaviourIdCache: 0
-  <OwnerClientId>k__BackingField: 0
-  m_VarInit: 0
-  <m_TargetIdBeingSynchronized>k__BackingField: 0
-  SyncPositionX: 1
-  SyncPositionY: 1
-  SyncPositionZ: 1
-  SyncRotAngleX: 1
-  SyncRotAngleY: 1
-  SyncRotAngleZ: 1
-  SyncScaleX: 1
-  SyncScaleY: 1
-  SyncScaleZ: 1
-  PositionThreshold: 0.001
-  RotAngleThreshold: 0.01
-  ScaleThreshold: 0.01
-  UseQuaternionSynchronization: 0
-  UseQuaternionCompression: 0
-  UseHalfFloatPrecision: 0
-  InLocalSpace: 0
-  Interpolate: 1
-  SlerpPosition: 0
-  <CanCommitToTransform>k__BackingField: 0
-  m_CachedIsServer: 0
-  m_CachedNetworkManager: {fileID: 0}
-  m_ClientIds:
-  - 0
-  m_CurrentPosition: {x: 0, y: 0, z: 0}
-  m_TargetPosition: {x: 0, y: 0, z: 0}
-  m_CurrentScale: {x: 0, y: 0, z: 0}
-  m_TargetScale: {x: 0, y: 0, z: 0}
-  m_CurrentRotation: {x: 0, y: 0, z: 0, w: 0}
-  m_TargetRotation: {x: 0, y: 0, z: 0}
-  m_MessageName: 
-  m_LastTick: 0
-  m_InternalStatNetVar: {m_NetworkBehaviour: {fileID: 0}, m_IsDirty: 0, <Name>k__BackingField: , m_HasPreviousValue: 0, m_IsDisposed: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -1202,3 +1048,4 @@ SceneRoots:
   - {fileID: 1911524844}
   - {fileID: 403601645}
   - {fileID: 746180100}
+  - {fileID: 357980476}
