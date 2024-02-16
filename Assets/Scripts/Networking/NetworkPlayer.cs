@@ -13,10 +13,17 @@ public class NetworkPlayer : MonoBehaviour
     public Transform righthand;
     private PhotonView photonView;
 
-
     void Start() 
     {
         photonView = GetComponent<PhotonView>();
+
+        if(photonView.IsMine)
+        {
+            // we set all the network objects false
+            righthand.gameObject.GetComponent<Renderer>().enabled = false;
+            lefthand.gameObject.GetComponent<Renderer>().enabled = false;
+            head.gameObject.GetComponent<Renderer>().enabled = false;   
+        }
     }
 
     void Update()
@@ -35,10 +42,7 @@ public class NetworkPlayer : MonoBehaviour
             righthand.position = VRRigReference.Singleton.righthand.position;
             righthand.rotation = VRRigReference.Singleton.righthand.rotation;
 
-            // we set all the network objects false
-            righthand.gameObject.SetActive(false);
-            lefthand.gameObject.SetActive(false);
-            head.gameObject.SetActive(false);
+                 
         }       
         
     }
