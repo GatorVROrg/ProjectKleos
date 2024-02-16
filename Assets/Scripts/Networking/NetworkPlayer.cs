@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
+using UnityEngine.Rendering;
+using Unity.VisualScripting;
+using System.Linq;
 
 public class NetworkPlayer : MonoBehaviour
 {
@@ -20,9 +23,10 @@ public class NetworkPlayer : MonoBehaviour
         if(photonView.IsMine)
         {
             // we set all the network objects false
-            righthand.gameObject.GetComponent<Renderer>().enabled = false;
-            lefthand.gameObject.GetComponent<Renderer>().enabled = false;
-            head.gameObject.GetComponent<Renderer>().enabled = false;   
+            foreach(var item in GetComponentsInChildren<Renderer>())
+            {
+                item.enabled = false;
+            }
         }
     }
 
