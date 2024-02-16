@@ -4,7 +4,7 @@ using UnityEngine;
 using Photon.Pun;
 using UnityEngine.InputSystem;
 
-public class AnimateHandOnInput : MonoBehaviour
+public class NetworkAnimateHandOnInput : MonoBehaviour
 {
 
     public InputActionProperty pinchAnimationAction;
