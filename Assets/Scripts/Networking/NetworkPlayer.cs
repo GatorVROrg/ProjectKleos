@@ -2,9 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
-using UnityEngine.Rendering;
-using Unity.VisualScripting;
-using System.Linq;
 
 public class NetworkPlayer : MonoBehaviour
 {
