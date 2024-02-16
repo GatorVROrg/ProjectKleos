@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
+
 public class NetworkPlayer : MonoBehaviour
 {
 
@@ -10,8 +11,6 @@ public class NetworkPlayer : MonoBehaviour
     public Transform head;
     public Transform lefthand;
     public Transform righthand;
-
-
     private PhotonView photonView;
 
 
@@ -35,10 +34,11 @@ public class NetworkPlayer : MonoBehaviour
 
             righthand.position = VRRigReference.Singleton.righthand.position;
             righthand.rotation = VRRigReference.Singleton.righthand.rotation;
-            // // we set all the network objects false
-            // righthand.gameObject.SetActive(false);
-            // lefthand.gameObject.SetActive(false);
-            // head.gameObject.SetActive(false);
+
+            // we set all the network objects false
+            righthand.gameObject.SetActive(false);
+            lefthand.gameObject.SetActive(false);
+            head.gameObject.SetActive(false);
         }       
         
     }

@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using Photon.Pun;
 using UnityEngine.InputSystem;
 
 public class AnimateHandOnInput : MonoBehaviour
@@ -11,15 +11,20 @@ public class AnimateHandOnInput : MonoBehaviour
     public InputActionProperty gripAnimationAction;
 
     public Animator handAnimator;
+
+    public PhotonView photonView;
+
     
     // Update is called once per frame
     void Update()
     {
-        float triggerValue = pinchAnimationAction.action.ReadValue<float>();
-        handAnimator.SetFloat("Trigger", triggerValue);
+        if(photonView.IsMine)
+        {
+            float triggerValue = pinchAnimationAction.action.ReadValue<float>();
+            handAnimator.SetFloat("Trigger", triggerValue);
 
-        float gripValue = gripAnimationAction.action.ReadValue<float>();
-        handAnimator.SetFloat("Grip", gripValue);
-
+            float gripValue = gripAnimationAction.action.ReadValue<float>();
+            handAnimator.SetFloat("Grip", gripValue);
+        }
     }
 }
