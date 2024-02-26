@@ -5,9 +5,15 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/MultiplayerTesting.unity
     guid: f54de5d9891a36a4d818ae5732e10f66
+  - enabled: 1
+    path: Assets/Scenes/InventoryCraftingTesting.unity
+    guid: c2f969756cffd3e4c9741b4ad237ee07
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: a3378edecc329424987bd5b7410ad615, type: 2}
+    UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: 0ba1caf797ce3b84c83ce2d8b0cd59d7, type: 2}
+    com.unity.xr.arfoundation.simulation_settings: {fileID: 11400000, guid: 225ab01598f4c484f822e3f5e1e01dac, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 74ed73c7d8dc3a5468444250a8757efc, type: 2}
+    com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 18ae61027ae41444389a568d637b361f, type: 2}
