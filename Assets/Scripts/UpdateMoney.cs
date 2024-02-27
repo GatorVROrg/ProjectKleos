@@ -9,6 +9,7 @@ public class UpdateMoney : MonoBehaviour
     int amtMoney = 0;
     string message = "Money: ";
     public TextMeshProUGUI hud;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -23,7 +24,7 @@ public class UpdateMoney : MonoBehaviour
     }
 
     void OnCollisionEnter(Collision collision) {
-        if (collision.gameObject.tag == "Resource") {
+        if (collision.gameObject.layer == 6) {
             Destroy(collision.gameObject);
             amtMoney++;
             hud.SetText(message + amtMoney);

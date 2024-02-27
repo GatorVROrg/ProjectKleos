@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: 6102205058757266727}
   - component: {fileID: 4024942319623163880}
   - component: {fileID: 5783722435968095429}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: gold
-  m_TagString: Resource
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
