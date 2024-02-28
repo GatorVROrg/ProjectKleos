@@ -4,18 +4,18 @@ using UnityEngine;
 using Photon.Pun;
 using Photon.Realtime;
 
-[System.Serializable]
-public class DefaultRoom
-{
-    public string Name;
-    public int sceneIndex;
-    public int maxPlayer;
-}
+// [System.Serializable]
+// public class DefaultRoom
+// {
+//     public string Name;
+//     public int sceneIndex;
+//     public int maxPlayer;
+// }
 
 public class NetworkManager : MonoBehaviourPunCallbacks
 {
-    public List<DefaultRoom> defaultRooms;
-    public GameObject roomUI;
+    // public List<DefaultRoom> defaultRooms;
+    // public GameObject roomUI;
 
     void Start()
     {
@@ -32,14 +32,6 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     {
         Debug.Log("Connected to master.");
         base.OnConnectedToMaster();
-        PhotonNetwork.JoinLobby();
-    }
-
-    public override void OnJoinedLobby()
-    {
-        base.OnJoinedLobby();
-        Debug.Log("Joined Lobby");
-
         RoomOptions roomOptions = new RoomOptions();
         roomOptions.MaxPlayers = 5;
         roomOptions.IsVisible = true;
@@ -48,15 +40,21 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         PhotonNetwork.JoinOrCreateRoom("Room 1", roomOptions, TypedLobby.Default);
     }
 
-    public void InitializeRoom()
-    {
-        RoomOptions roomOptions = new RoomOptions();
-        roomOptions.MaxPlayers = 5;
-        roomOptions.IsVisible = true;
-        roomOptions.IsOpen = true;
+    // public override void OnJoinedLobby()
+    // {
+    //     base.OnJoinedLobby();
+    //     Debug.Log("Joined Lobby");
+    // }
 
-        PhotonNetwork.JoinOrCreateRoom("Room 1", roomOptions, TypedLobby.Default);
-    }
+    // public void InitializeRoom()
+    // {
+    //     RoomOptions roomOptions = new RoomOptions();
+    //     roomOptions.MaxPlayers = 5;
+    //     roomOptions.IsVisible = true;
+    //     roomOptions.IsOpen = true;
+
+    //     PhotonNetwork.JoinOrCreateRoom("Room 1", roomOptions, TypedLobby.Default);
+    // }
 
     public override void OnJoinedRoom()
     {
