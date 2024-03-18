@@ -9,13 +9,12 @@ public class UpdateMoney : MonoBehaviour
     int amtMoney = 0;
     string message = "Money: ";
     public TextMeshProUGUI hud;
-    private Collider playerCollider;
     
 
     // Start is called before the first frame update
     void Start()
     {
-        playerCollider = GetComponent<Collider>();
+
     }
 
     // Update is called once per frame
@@ -26,7 +25,7 @@ public class UpdateMoney : MonoBehaviour
 
     void OnControllerColliderHit(ControllerColliderHit hit) {
         if (hit.gameObject.tag == "Resource") {
-            Debug.Log(playerCollider.name);
+            Debug.Log(hit.gameObject);
             Destroy(hit.gameObject);
             amtMoney++;
             hud.SetText(message + amtMoney);
