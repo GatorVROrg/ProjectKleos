@@ -749,7 +749,7 @@ Transform:
   m_GameObject: {fileID: 1853134267}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.77, y: 0.5, z: 0.75845504}
+  m_LocalPosition: {x: 8.59, y: 0.5, z: -3.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -778,7 +778,7 @@ GameObject:
   - component: {fileID: 2120543758}
   m_Layer: 0
   m_Name: SpawnSystem
-  m_TagString: Untagged
+  m_TagString: Resource
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -795,7 +795,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07c62bc647085a34dad9155c404fdb2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obj: {fileID: 8763783281690738277, guid: 557324f06bef4a44db4f3b602a6826b1, type: 3}
+  obj: {fileID: 606389295321602537, guid: d061b49a01b5c5345aba9dcebca10bc2, type: 3}
   spawnDest1: {fileID: 926485247}
   spawnDest2: {fileID: 1853134268}
   spawnDest3: {fileID: 1522565550}

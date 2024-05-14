@@ -34,9 +34,9 @@ public class SpawningScript : MonoBehaviour
             // DEBUG: ALL SPAWNERS SPAWN AT SAME TIME
             // DEBUG: DELETE NEXT 4 LINES, UNCOMMENT 20-32 WHEN PUBLISHING
 
-            Instantiate(obj, spawnDest1.position, spawnDest1.rotation);
-            Instantiate(obj, spawnDest2.position, spawnDest2.rotation);
-            Instantiate(obj, spawnDest3.position, spawnDest3.rotation);
+            // Instantiate(obj, spawnDest1.position, spawnDest1.rotation);
+            // Instantiate(obj, spawnDest2.position, spawnDest2.rotation);
+            // Instantiate(obj, spawnDest3.position, spawnDest3.rotation);
             Instantiate(obj, spawnDest4.position, spawnDest4.rotation);
         }
     }
