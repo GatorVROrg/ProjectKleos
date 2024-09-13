@@ -104,6 +104,7 @@ public class EndlessTerrain : MonoBehaviour
             meshCollider = meshObject.AddComponent<MeshCollider>();
             meshRenderer.material = material;
         	vegetationGenerator = meshObject.AddComponent<VegetationGenerator>();
+            meshObject.layer = LayerMask.NameToLayer("Ground");
 
             meshObject.transform.position = positionV3 * scale;
             meshObject.transform.parent = parent;
