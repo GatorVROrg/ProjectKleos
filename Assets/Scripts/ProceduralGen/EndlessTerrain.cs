@@ -83,6 +83,7 @@ public class EndlessTerrain : MonoBehaviour
         MeshCollider meshCollider;
 
 		VegetationGenerator vegetationGenerator;
+        StructureGenerator structureGenerator;
         
         LODInfo[] detailLevels;
         LODMesh[] lodMeshes;
@@ -104,6 +105,7 @@ public class EndlessTerrain : MonoBehaviour
             meshCollider = meshObject.AddComponent<MeshCollider>();
             meshRenderer.material = material;
         	vegetationGenerator = meshObject.AddComponent<VegetationGenerator>();
+            structureGenerator = meshObject.AddComponent<StructureGenerator>();
             meshObject.layer = LayerMask.NameToLayer("Ground");
 
             meshObject.transform.position = positionV3 * scale;
@@ -166,6 +168,7 @@ public class EndlessTerrain : MonoBehaviour
 					}
 				}		
                 vegetationGenerator.GenerateVegetation();
+                structureGenerator.GenerateStructures();
 				SetVisible(visible);
 			}
 		}
