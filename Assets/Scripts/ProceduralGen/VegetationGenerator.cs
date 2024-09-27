@@ -33,6 +33,7 @@ public class VegetationGenerator : MonoBehaviour
     public float RocksSpawnRadius = 480f; // Radius from the center of the island to spawn rocks
 
     private List<GameObject> hitObjects = new();
+    private List<GameObject> vegetation = new();
     private GameObject hitObject;
 
     public void GenerateVegetation()
@@ -41,6 +42,11 @@ public class VegetationGenerator : MonoBehaviour
         GenerateStones();
         GenerateOliveTrees();
         GenerateCypressTrees();
+    }
+
+    public List<GameObject> getVegetation()
+    {
+        return vegetation;
     }
 
     public void GenerateCypressTrees()
@@ -81,6 +87,7 @@ public class VegetationGenerator : MonoBehaviour
                         // Spawn the tree
                         GameObject tree = Instantiate(treePrefab, hit.point + clusterOffset, treePrefab.transform.rotation);
                         tree.transform.parent = transform;
+                        vegetation.Add(tree);
                     }
                 }
             }
@@ -132,6 +139,7 @@ public class VegetationGenerator : MonoBehaviour
                         // Spawn the tree
                         GameObject tree = Instantiate(treePrefab, hit.point, treePrefab.transform.rotation);
                         tree.transform.parent = transform;
+                        vegetation.Add(tree);
                     }
                     else
                     {
@@ -178,7 +186,8 @@ public class VegetationGenerator : MonoBehaviour
 
                     Vector3 randomScale = new(random, random, random);
                     stones.transform.localScale = randomScale;   
-                    stones.transform.rotation *= Quaternion.Euler(0, Random.Range(0, 360), 0);             
+                    stones.transform.rotation *= Quaternion.Euler(0, Random.Range(0, 360), 0);   
+                    vegetation.Add(stones);          
                 }
             }
         }
@@ -224,6 +233,7 @@ public class VegetationGenerator : MonoBehaviour
                     );
                     Rock.transform.localScale = randomScale;
                     Rock.transform.rotation *= Quaternion.Euler(0, Random.Range(0, 360), 0);
+                    vegetation.Add(Rock);  
                 }
             }
         }
