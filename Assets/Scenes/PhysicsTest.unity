@@ -3226,6 +3226,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1307251348}
   - component: {fileID: 1307251347}
+  - component: {fileID: 1307251349}
   m_Layer: 6
   m_Name: PhysicsRig
   m_TagString: Untagged
@@ -3273,6 +3274,37 @@ Transform:
   - {fileID: 1277962793}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1307251349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1307251346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13c092c552469ae4cb7253221064ad64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 1
+  moveInputSource:
+    m_UseReference: 1
+    m_Action:
+      m_Name: Move Input Source
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: e147444b-09dd-4ce6-b8a4-98dcdba4ca53
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 6972639530819350904, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  rb: {fileID: 272913836}
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  directionSource: {fileID: 370335957}
+  bodyCollider: {fileID: 0}
 --- !u!1 &1696550755
 GameObject:
   m_ObjectHideFlags: 0
