@@ -765,6 +765,16 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1144767161 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7387070093210520887, guid: cd7a2ae12a82c2c4985e2221bd83eb78, type: 3}
+  m_PrefabInstance: {fileID: 566380691264976640}
+  m_PrefabAsset: {fileID: 0}
+--- !u!136 &1277591242 stripped
+CapsuleCollider:
+  m_CorrespondingSourceObject: {fileID: 2611372524189592974, guid: cd7a2ae12a82c2c4985e2221bd83eb78, type: 3}
+  m_PrefabInstance: {fileID: 566380691264976640}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1696550755
 GameObject:
   m_ObjectHideFlags: 0
@@ -777,7 +787,7 @@ GameObject:
   - component: {fileID: 1696550758}
   - component: {fileID: 1696550757}
   - component: {fileID: 1696550756}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -882,7 +892,7 @@ GameObject:
   - component: {fileID: 2056126393}
   - component: {fileID: 2056126392}
   - component: {fileID: 2056126391}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1026,6 +1036,30 @@ PrefabInstance:
     - target: {fileID: 7895357649710565427, guid: cd7a2ae12a82c2c4985e2221bd83eb78, type: 3}
       propertyPath: m_Name
       value: BaseRig
+      objectReference: {fileID: 0}
+    - target: {fileID: 8055618892702734360, guid: cd7a2ae12a82c2c4985e2221bd83eb78, type: 3}
+      propertyPath: turnSource
+      value: 
+      objectReference: {fileID: 1144767161}
+    - target: {fileID: 8055618892702734360, guid: cd7a2ae12a82c2c4985e2221bd83eb78, type: 3}
+      propertyPath: bodyCollider
+      value: 
+      objectReference: {fileID: 1277591242}
+    - target: {fileID: 8055618892702734360, guid: cd7a2ae12a82c2c4985e2221bd83eb78, type: 3}
+      propertyPath: groundLayer.m_Bits
+      value: 128
+      objectReference: {fileID: 0}
+    - target: {fileID: 8055618892702734360, guid: cd7a2ae12a82c2c4985e2221bd83eb78, type: 3}
+      propertyPath: turnInputSource.m_Reference
+      value: 
+      objectReference: {fileID: -6493913391331992944, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+    - target: {fileID: 8055618892702734360, guid: cd7a2ae12a82c2c4985e2221bd83eb78, type: 3}
+      propertyPath: turnInputSource.m_UseReference
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8055618892702734360, guid: cd7a2ae12a82c2c4985e2221bd83eb78, type: 3}
+      propertyPath: turnInputSource.m_Action.m_Name
+      value: Turn Input Source
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
