@@ -6145,6 +6145,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 393587786227209450, guid: e2eb58813c446b9459b6e1e12e779ff0, type: 3}
+      propertyPath: orthographic
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 393587786227209450, guid: e2eb58813c446b9459b6e1e12e779ff0, type: 3}
+      propertyPath: far clip plane
+      value: 600
+      objectReference: {fileID: 0}
+    - target: {fileID: 393587786227209450, guid: e2eb58813c446b9459b6e1e12e779ff0, type: 3}
+      propertyPath: near clip plane
+      value: 0.03
+      objectReference: {fileID: 0}
     - target: {fileID: 2870917300294425546, guid: e2eb58813c446b9459b6e1e12e779ff0, type: 3}
       propertyPath: m_SmoothMovement
       value: 1
@@ -6168,6 +6180,10 @@ PrefabInstance:
     - target: {fileID: 2870917300294425546, guid: e2eb58813c446b9459b6e1e12e779ff0, type: 3}
       propertyPath: m_ValidColorGradient.m_ColorSpace
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4459049895670000907, guid: e2eb58813c446b9459b6e1e12e779ff0, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4792781445635778084, guid: e2eb58813c446b9459b6e1e12e779ff0, type: 3}
       propertyPath: m_InteractionManager
