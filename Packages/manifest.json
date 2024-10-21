@@ -1,13 +1,12 @@
 {
   "dependencies": {
+    "ca.andydbc.unity-texture-packer": "file:C:/Users/gohan/OneDrive/Documents/UnityProjects/unity-texture-packer-master/unity-texture-packer-master",
     "com.unity.collab-proxy": "2.4.4",
     "com.unity.feature.development": "1.0.1",
-    "com.unity.multiplayer.tools": "1.1.1",
-    "com.unity.netcode.gameobjects": "1.10.0",
+    "com.unity.mobile.android-logcat": "1.4.3",
     "com.unity.postprocessing": "3.4.0",
     "com.unity.recorder": "4.0.3",
     "com.unity.render-pipelines.universal": "14.0.11",
-    "com.unity.services.lobby": "1.2.2",
     "com.unity.services.relay": "1.0.5",
     "com.unity.terrain-tools": "5.0.5",
     "com.unity.textmeshpro": "3.0.7",

@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿/*
+
+using UnityEngine;
 using System.Collections.Generic;
 using TreeEditor;
 
@@ -211,3 +213,5 @@ public class EndlessTerrain : MonoBehaviour
         public float visibleDstThreshold;
     }
 }
+
+*/

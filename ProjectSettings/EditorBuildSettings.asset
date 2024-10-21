@@ -6,8 +6,11 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/PrototypeScene.unity
-    guid: 9f39fbb31237ccf4880a61139b25ce43
+    path: Assets/Scenes/MainMenu.unity
+    guid: 3bf865f29f91e4645bfbfbcfe62ba9e3
+  - enabled: 1
+    path: Assets/Scenes/PhysicsTest.unity
+    guid: c4d71ca472cf1b74aa02bb98d5365393
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: a3378edecc329424987bd5b7410ad615, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 74ed73c7d8dc3a5468444250a8757efc, type: 2}

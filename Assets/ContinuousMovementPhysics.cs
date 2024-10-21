@@ -36,6 +36,8 @@ public class ContinuousMovementPhysics : MonoBehaviour
             Quaternion yaw = Quaternion.Euler(0, directionSource.eulerAngles.y, 0);
             Vector3 direction = yaw * new Vector3(inputMoveAxis.x, 0, inputMoveAxis.y);
 
+            //shoot raycast straight down to determine angle of normal beneath player, move in the direction of the normal surface
+
             Vector3 targetMovePosition = rb.position + direction * Time.fixedDeltaTime * speed;
 
             Vector3 axis = Vector3.up;
