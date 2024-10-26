@@ -1,0 +1,14 @@
+Color Codes
+
+Bronze:
+CD7F32
+
+Steel:
+4d4346
+
+Olive Wood:
+8C6D00
+
+Cypress Wood:
+4E3000
+
