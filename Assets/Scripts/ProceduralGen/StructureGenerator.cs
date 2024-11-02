@@ -8,7 +8,6 @@ public class StructureGenerator : MonoBehaviour
     public float MinotaurEntranceMinHeight = 45f; // Minimum height of terrain for spawning
     public float MinotaurEntranceSpawnRadius = 100f; // Radius for spawn location
     public float maxSlopeAngle = 5f; // Maximum allowed slope (degrees) for flatness
-    public int maxAttempts = 10; // Maximum number of attempts before giving up
 
     private List<GameObject> hitObjects = new();
     private GameObject hitObject;
@@ -19,7 +18,7 @@ public class StructureGenerator : MonoBehaviour
     public void GenerateStructures()
     {
         vegetationGenerator = GetComponent<VegetationGenerator>();
-        vegetation = vegetationGenerator.getVegetation(); // Assuming this gets all the generated vegetation objects
+        vegetation = vegetationGenerator.GetVegetation(); // Assuming this gets all the generated vegetation objects
         GenerateMinotaurEntrance();
     }
 
@@ -28,10 +27,10 @@ public class StructureGenerator : MonoBehaviour
         MinotaurEntrancePrefab = Resources.Load<GameObject>("Structures/BossStructures/MinotaurEntrance");
         Vector3 islandCenter = transform.position; // Center of the island
 
-        int attempts = 0;
         bool placed = false;
+        int numOfShots = 0; 
 
-        while (attempts < maxAttempts && !placed)
+        while ( numOfShots < 500 && !placed)
         {
             // Random point within spawn radius from the center of the island
             Vector3 randomPoint = islandCenter + Random.insideUnitSphere * MinotaurEntranceSpawnRadius;
@@ -57,8 +56,7 @@ public class StructureGenerator : MonoBehaviour
                     }
                 }
             }
-
-            attempts++; // Increment the number of attempts
+            numOfShots++;
         }
 
         if (hitObject != null)
@@ -70,8 +68,8 @@ public class StructureGenerator : MonoBehaviour
     // Helper method to check if the area is flat enough
     private bool IsFlatArea(Vector3 centerPoint, GameObject structure)
     {
-        float halfWidth = structure.GetComponentInChildren<Renderer>().bounds.extents.x;
-        float halfDepth = structure.GetComponentInChildren<Renderer>().bounds.extents.z;
+        float halfWidth = 200;
+        float halfDepth = 200;
 
         // Sample points at the edges of the structure's bounds
         Vector3[] pointsToCheck = new Vector3[]
@@ -113,7 +111,6 @@ public class StructureGenerator : MonoBehaviour
         // Loop through all vegetation objects
         foreach (var vegetation in vegetation)
         {
-
             // Check the distance between the vegetation object and the structure center
             float distance = Vector3.Distance(structureCenter * structure.transform.localScale.x, vegetation.transform.position);
             if (distance < structureRadius)

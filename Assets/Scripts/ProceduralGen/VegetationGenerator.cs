@@ -3,53 +3,35 @@ using UnityEngine;
 
 public class VegetationGenerator : MonoBehaviour
 {
-    [Header("Cypress Trees")]
-    public List<GameObject> CypressTreePrefabs; // Array of tree prefabs to choose from
-    public int CypressMaxTrees = 100; // Maximum number of trees to spawn
-    public float CypressMinTreeHeight = 20f; // Minimum height of terrain for tree spawning
-    public float CypressMaxTreeHeight = 50f; // Maximum height of terrain for tree spawning
-    public float CypressSpawnRadius = 480f; // Radius from the center of the island to spawn trees
-    public int CypressClusterSize = 4; // Number of trees to spawn in each cluster
+    [Header("Trees")]
+    public List<GameObject> CypressTreePrefabs;
+    public List<GameObject> OliveTreePrefabs;
 
-    [Header("Olive Trees")]
-    public List<GameObject> OliveTreePrefabs; // Array of tree prefabs to choose from
-    public int OliveMaxTrees = 200; // Maximum number of trees to spawn
-    public float OliveMinTreeHeight = 20f; // Minimum height of terrain for tree spawning
-    public float OliveMaxTreeHeight = 40f; // Maximum height of terrain for tree spawning
-    public float OliveSpawnRadius = 480f; // Radius from the center of the island to spawn trees
+    [Header("Rocks and Stones")]
+    public List<GameObject> StonePrefabs;
+    public List<GameObject> RockPrefabs;
 
-    [Header("Stones")]
-    public List<GameObject> StonesPrefabs; // Array of stones prefabs to choose from
-    public int StonesMax = 2000; // Maximum number of stones to spawn
-    public float StonesMinHeight = 10f; // Minimum height of terrain for stones spawning
-    public float StonesMaxHeight = 25f; // Maximum height of terrain for stones spawning
-    public float StonesSpawnRadius = 500f; // Radius from the center of the island to spawn stones
+    [Header("Generation Parameters")]
+    public int MaxCypressTrees = 100;
+    public int MaxOliveTrees = 200;
+    public int MaxStones = 2000;
+    public int MaxRocks = 500;
 
-    [Header("Rocks")]
-    public List<GameObject> RocksPrefabs; // Array of rock prefabs to choose from
-    public int RocksMax = 500; // Maximum number of rocks to spawn
-    public float RocksMinHeight = 35f; // Minimum height of terrain for rock spawning
-    public float RocksMaxHeight = 45f; // Maximum height of terrain for rock spawning
-    public float RocksSpawnRadius = 480f; // Radius from the center of the island to spawn rocks
+    public float TreeSpawnRadius = 480f;
+    public float StoneSpawnRadius = 500f;
 
-    private List<GameObject> hitObjects = new();
+    public float MinTreeHeight = 20f;
+    public float MaxCypressHeight = 50f;
+    public float MaxOliveHeight = 40f;
+
+    public float MinStoneHeight = 10f;
+    public float MaxStoneHeight = 25f;
+    public float MinRockHeight = 35f;
+    public float MaxRockHeight = 45f;
+
     private List<GameObject> vegetation = new();
-    private GameObject hitObject;
-
+    
     public void GenerateVegetation()
-    {
-        GenerateRocks();
-        GenerateStones();
-        GenerateOliveTrees();
-        GenerateCypressTrees();
-    }
-
-    public List<GameObject> getVegetation()
-    {
-        return vegetation;
-    }
-
-    public void GenerateCypressTrees()
     {
         CypressTreePrefabs = new List<GameObject>
         {
@@ -58,45 +40,6 @@ public class VegetationGenerator : MonoBehaviour
             Resources.Load<GameObject>("Trees/Cypresses/Cypress2"),
             Resources.Load<GameObject>("Trees/Cypresses/Cypress3")
         };
-
-        Vector3 islandCenter = transform.position; // Center of the island
-
-        // Loop to spawn trees
-        for (int i = 0; i < CypressMaxTrees; i++)
-        {
-            // Random point within spawn radius from the center of the island
-            Vector3 randomPoint = islandCenter + Random.insideUnitSphere * CypressSpawnRadius;
-
-            // Cast a ray to find the terrain height at the random position
-            if (Physics.Raycast(new Vector3(randomPoint.x, 1000f, randomPoint.z), Vector3.down, out RaycastHit hit, Mathf.Infinity))
-            {
-                hitObject = hit.transform.gameObject;
-
-                // Check if terrain height is within desired range
-                if (hit.point.y >= CypressMinTreeHeight && hit.point.y <= CypressMaxTreeHeight && !hitObjects.Contains(hit.transform.gameObject) && hit.transform.gameObject.layer == LayerMask.NameToLayer("Ground"))
-                {
-                    // Randomly choose a tree prefab
-                    GameObject treePrefab = CypressTreePrefabs[Random.Range(0, CypressTreePrefabs.Count)];
-
-                    // Spawn a cluster of trees
-                    for (int j = 0; j < CypressClusterSize; j++)
-                    {
-                        // Offset the position within the cluster
-                        Vector3 clusterOffset = new(Random.Range(-5f, 5f), 0f, Random.Range(-5f, 5f));
-
-                        // Spawn the tree
-                        GameObject tree = Instantiate(treePrefab, hit.point + clusterOffset, treePrefab.transform.rotation);
-                        tree.transform.parent = transform;
-                        vegetation.Add(tree);
-                    }
-                }
-            }
-        }
-        hitObjects.Add(hitObject);
-    }
-
-    public void GenerateOliveTrees()
-    {
         OliveTreePrefabs = new List<GameObject>
         {
             // Add prefabs to the treePrefabs list
@@ -104,98 +47,14 @@ public class VegetationGenerator : MonoBehaviour
             Resources.Load<GameObject>("Trees/Olives/Olive2"),
             Resources.Load<GameObject>("Trees/Olives/Olive3")
         };
-
-        Vector3 islandCenter = transform.position; // Center of the island
-
-        // Loop to spawn trees
-        for (int i = 0; i < OliveMaxTrees; i++)
-        {
-            // Random point within spawn radius from the center of the island
-            Vector3 randomPoint = islandCenter + Random.insideUnitSphere * OliveSpawnRadius;
-
-            // Cast a ray to find the terrain height at the random position
-            if (Physics.Raycast(new Vector3(randomPoint.x, 1000f, randomPoint.z), Vector3.down, out RaycastHit hit, Mathf.Infinity))
-            {
-                // Check if terrain height is within desired range
-                if (hit.point.y >= OliveMinTreeHeight && hit.point.y <= OliveMaxTreeHeight && !hitObjects.Contains(hit.transform.gameObject) && hit.transform.gameObject.layer == LayerMask.NameToLayer("Ground"))
-                {
-                    // Check distance from cypress trees
-                    bool tooCloseToCypress = false;
-                    GameObject[] cypressTreesInScene = GameObject.FindGameObjectsWithTag("Cypress");
-                    foreach (GameObject cypressTree in cypressTreesInScene)
-                    {
-                        if (Vector3.Distance(randomPoint, cypressTree.transform.position) < 10)
-                        {
-                            tooCloseToCypress = true;
-                            break;
-                        }
-                    }
-
-                    if (!tooCloseToCypress)
-                    {
-                        // Randomly choose a tree prefab
-                        GameObject treePrefab = OliveTreePrefabs[Random.Range(0, OliveTreePrefabs.Count)];
-
-                        // Spawn the tree
-                        GameObject tree = Instantiate(treePrefab, hit.point, treePrefab.transform.rotation);
-                        tree.transform.parent = transform;
-                        vegetation.Add(tree);
-                    }
-                    else
-                    {
-                        Debug.Log("too fuckin close");
-                    }
-                }
-            }
-        }
-    }
-
-    public void GenerateStones()
-    {
-        StonesPrefabs = new List<GameObject>
+        StonePrefabs = new List<GameObject>
         {
             // Add prefabs to the treePrefabs list
             Resources.Load<GameObject>("Rocks/Stones/Stones1"),
             Resources.Load<GameObject>("Rocks/Stones/Stones2"),
             Resources.Load<GameObject>("Rocks/Stones/Stones3")
         };
-
-        Vector3 islandCenter = transform.position; // Center of the island
-
-        // Loop to spawn trees
-        for (int i = 0; i < StonesMax; i++)
-        {
-            // Random point within spawn radius from the center of the island
-            Vector3 randomPoint = islandCenter + Random.insideUnitSphere * StonesSpawnRadius;
-
-            // Cast a ray to find the terrain height at the random position
-            if (Physics.Raycast(new Vector3(randomPoint.x, 1000f, randomPoint.z), Vector3.down, out RaycastHit hit, Mathf.Infinity))
-            {
-                // Check if terrain height is within desired range
-                if (hit.point.y >= StonesMinHeight && hit.point.y <= StonesMaxHeight && !hitObjects.Contains(hit.transform.gameObject) && hit.transform.gameObject.layer == LayerMask.NameToLayer("Ground"))
-                {
-                    // Randomly choose a tree prefab
-                    GameObject StonesPrefab = StonesPrefabs[Random.Range(0, StonesPrefabs.Count)];
-
-                    // Spawn the tree
-                    GameObject stones = Instantiate(StonesPrefab, hit.point, StonesPrefab.transform.rotation);
-                    stones.transform.parent = transform;
-                    float minScale = 5f;
-                    float maxScale = 10f;
-                    float random = Random.Range(minScale, maxScale);
-
-                    Vector3 randomScale = new(random, random, random);
-                    stones.transform.localScale = randomScale;   
-                    stones.transform.rotation *= Quaternion.Euler(0, Random.Range(0, 360), 0);   
-                    vegetation.Add(stones);          
-                }
-            }
-        }
-    }
-
-    public void GenerateRocks()
-    {
-        RocksPrefabs = new List<GameObject>
+        RockPrefabs = new List<GameObject>
         {
             // Add prefabs to the treePrefabs list
             Resources.Load<GameObject>("Rocks/Rocks/Rock1"),
@@ -203,40 +62,57 @@ public class VegetationGenerator : MonoBehaviour
             Resources.Load<GameObject>("Rocks/Rocks/Rock3")
         };
 
-        Vector3 islandCenter = transform.position; // Center of the island
+        GenerateVegetationOfType(CypressTreePrefabs, MaxCypressTrees, MinTreeHeight, MaxCypressHeight, "Cypress", 4);
+        GenerateVegetationOfType(OliveTreePrefabs, MaxOliveTrees, MinTreeHeight, MaxOliveHeight, "Olive", 1);
+        GenerateVegetationOfType(StonePrefabs, MaxStones, MinStoneHeight, MaxStoneHeight, "Stone", 1);
+        GenerateVegetationOfType(RockPrefabs, MaxRocks, MinRockHeight, MaxRockHeight, "Rock", 1);
+    }
 
-        // Loop to spawn trees
-        for (int i = 0; i < RocksMax; i++)
+    private void GenerateVegetationOfType(List<GameObject> prefabs, int maxCount, float minHeight, float maxHeight, string tag, int clusterSize)
+    {
+        Vector3 islandCenter = transform.position;
+
+        for (int i = 0; i < maxCount; i++)
         {
-            // Random point within spawn radius from the center of the island
-            Vector3 randomPoint = islandCenter + Random.insideUnitSphere * RocksSpawnRadius;
+            Vector3 randomPoint = islandCenter + Random.insideUnitSphere * TreeSpawnRadius;
 
-            // Cast a ray to find the terrain height at the random position
-            if (Physics.Raycast(new Vector3(randomPoint.x, 1000f, randomPoint.z), Vector3.down, out RaycastHit hit, Mathf.Infinity))
+            if (Physics.Raycast(new Vector3(randomPoint.x, 1000f, randomPoint.z), Vector3.down, out RaycastHit hit))
             {
-                // Check if terrain height is within desired range
-                if (hit.point.y >= RocksMinHeight && hit.point.y <= RocksMaxHeight && !hitObjects.Contains(hit.transform.gameObject) && hit.transform.gameObject.layer == LayerMask.NameToLayer("Ground"))
+                if (hit.point.y >= minHeight && hit.point.y <= maxHeight && hit.transform.gameObject.layer == LayerMask.NameToLayer("Ground"))
                 {
-                    // Randomly choose a tree prefab
-                    GameObject RocksPrefab = RocksPrefabs[Random.Range(0, RocksPrefabs.Count)];
+                    if (tag == "Olive" && IsTooCloseToOtherVegetation(randomPoint, "Cypress", 10f))
+                    {
+                        continue;
+                    }
 
-                    // Spawn the tree
-                    GameObject Rock = Instantiate(RocksPrefab, hit.point, RocksPrefab.transform.rotation);
-                    Rock.transform.parent = transform;
-                    Vector3 minScale = new(50f, 50f, 50f);
-                    Vector3 maxScale = new(200f, 200f, 200f);
-
-                    Vector3 randomScale = new(
-                        Random.Range(minScale.x, maxScale.x),
-                        Random.Range(minScale.y, maxScale.y),
-                        Random.Range(minScale.z, maxScale.z)
-                    );
-                    Rock.transform.localScale = randomScale;
-                    Rock.transform.rotation *= Quaternion.Euler(0, Random.Range(0, 360), 0);
-                    vegetation.Add(Rock);  
+                    for (int j = 0; j < clusterSize; j++)
+                    {
+                        Vector3 offset = (clusterSize > 1) ? new Vector3(Random.Range(-5f, 5f), 0f, Random.Range(-5f, 5f)) : Vector3.zero;
+                        GameObject prefab = prefabs[Random.Range(0, prefabs.Count)];
+                        GameObject instance = Instantiate(prefab, hit.point + offset, prefab.transform.rotation);
+                        instance.transform.parent = transform;
+                        vegetation.Add(instance);
+                    }
                 }
             }
         }
     }
 
+    private bool IsTooCloseToOtherVegetation(Vector3 position, string tag, float minDistance)
+    {
+        GameObject[] nearbyVegetation = GameObject.FindGameObjectsWithTag(tag);
+        foreach (GameObject obj in nearbyVegetation)
+        {
+            if (Vector3.Distance(position, obj.transform.position) < minDistance)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public List<GameObject> GetVegetation()
+    {
+        return vegetation;
+    }
 }
