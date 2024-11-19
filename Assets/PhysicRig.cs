@@ -27,10 +27,26 @@ public class PhysicRig : MonoBehaviour
 
         leftHandJoint.targetPosition = leftController.localPosition;
         leftHandJoint.targetRotation = leftController.localRotation;
-
+        
         rightHandJoint.targetPosition = rightController.localPosition;
         rightHandJoint.targetRotation = rightController.localRotation;
-
+        
         headJoint.targetPosition = playerHead.localPosition;
+
+        // Adjust the body collider height and center
+        //float clampedHeight = Mathf.Clamp(playerHead.localPosition.y, bodyHeightMin, bodyHeightMax);
+        //bodyCollider.height = clampedHeight;
+        //bodyCollider.center = new Vector3(playerHead.localPosition.x, clampedHeight / 2, playerHead.localPosition.z);
+        //
+        //// Set joint target positions and rotations
+        //leftHandJoint.targetPosition = leftHandJoint.transform.InverseTransformPoint(leftController.position);
+        //leftHandJoint.targetRotation = Quaternion.Inverse(leftHandJoint.transform.rotation) * leftController.rotation;
+        //
+        //rightHandJoint.targetPosition = rightHandJoint.transform.InverseTransformPoint(rightController.position);
+        //rightHandJoint.targetRotation = Quaternion.Inverse(rightHandJoint.transform.rotation) * rightController.rotation;
+        //
+        //headJoint.targetPosition = headJoint.transform.InverseTransformPoint(playerHead.position);
+
+
     }
 }
