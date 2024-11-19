@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 public class SingleIslandTerrain : MonoBehaviour 
 {
-    const float scale = 5f;
+    const float scale = 10f;
 
     public LODInfo[] detailLevels;
     public static float maxViewDst;

@@ -12,22 +12,21 @@ public class VegetationGenerator : MonoBehaviour
     public List<GameObject> RockPrefabs;
 
     [Header("Generation Parameters")]
-    public int MaxCypressTrees = 100;
-    public int MaxOliveTrees = 200;
-    public int MaxStones = 2000;
-    public int MaxRocks = 500;
+    public int MaxCypressTrees = 200;
+    public int MaxOliveTrees = 400;
+    public int MaxStones = 4000;
+    public int MaxRocks = 1000;
 
-    public float TreeSpawnRadius = 480f;
-    public float StoneSpawnRadius = 500f;
+    public float TreeSpawnRadius = 2000f;
 
     public float MinTreeHeight = 20f;
-    public float MaxCypressHeight = 50f;
-    public float MaxOliveHeight = 40f;
+    public float MaxCypressHeight = 100f;
+    public float MaxOliveHeight = 80f;
 
-    public float MinStoneHeight = 10f;
+    public float MinStoneHeight = 1f;
     public float MaxStoneHeight = 25f;
-    public float MinRockHeight = 35f;
-    public float MaxRockHeight = 45f;
+    public float MinRockHeight = 20f;
+    public float MaxRockHeight = 90f;
 
     private List<GameObject> vegetation = new();
     
