@@ -12,8 +12,8 @@ public class VegetationGenerator : MonoBehaviour
     public List<GameObject> RockPrefabs;
 
     [Header("Generation Parameters")]
-    public int MaxCypressTrees = 200;
-    public int MaxOliveTrees = 400;
+    public int MaxCypressTrees = 2000;
+    public int MaxOliveTrees = 4000;
     public int MaxStones = 4000;
     public int MaxRocks = 1000;
 

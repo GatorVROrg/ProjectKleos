@@ -7,8 +7,13 @@ public class StructureGenerator : MonoBehaviour
     public GameObject MinotaurEntrancePrefab;
     public float MinotaurEntranceMinHeight = 49f; // Minimum height of terrain for spawning
     public float MinotaurEntranceSpawnRadius = 1200; // Radius for spawn location
-    public float maxSlopeAngle = 0f; // Maximum allowed slope (degrees) for flatness
 
+    [Header("Spartoi Camps")]
+    public GameObject SpartoiCampPrefab;
+    public float SpartoiCampMinHeight = 49f;
+    public float SpartoiCampSpawnRadius = 1200;
+
+    public float maxSlopeAngle = 0f; // Maximum allowed slope (degrees) for flatness
     private List<GameObject> hitObjects = new();
     private GameObject hitObject;
 
@@ -51,6 +56,50 @@ public class StructureGenerator : MonoBehaviour
 
                         // Spawn the structure if the area is flat
                         GameObject entrance = Instantiate(MinotaurEntrancePrefab, hit.point, MinotaurEntrancePrefab.transform.rotation);
+                        entrance.transform.parent = transform;
+                        placed = true; // Mark as placed to stop further attempts
+                    }
+                }
+            }
+
+            numOfShots++;
+        }
+
+        if (hitObject != null)
+        {
+            hitObjects.Add(hitObject);
+        }
+    }
+
+    public void GenerateSpartoiCamps()
+    {
+        SpartoiCampPrefab = Resources.Load<GameObject>("Structures/BossStructures/SpartoiCamp");
+        Vector3 islandCenter = transform.position; // Center of the island
+
+        bool placed = false;
+        int numOfShots = 0; 
+
+        while (numOfShots < 2000 && !placed)
+        {
+            // Random point within spawn radius from the center of the island
+            Vector3 randomPoint = islandCenter + Random.insideUnitSphere * SpartoiCampSpawnRadius;
+
+            // Raycast to terrain to get the height at the random point
+            if (Physics.Raycast(new Vector3(randomPoint.x, 500, randomPoint.z), Vector3.down, out RaycastHit hit, Mathf.Infinity))
+            {
+                hitObject = hit.transform.gameObject;
+
+                // Check if terrain height is within the desired range and on the correct layer
+                if (hit.point.y >= SpartoiCampMinHeight && !hitObjects.Contains(hitObject) && hit.transform.gameObject.layer == LayerMask.NameToLayer("Ground"))
+                {
+                    // Check if the terrain is flat enough for the structure
+                    if (IsFlatArea(hit.point, SpartoiCampPrefab))
+                    {
+                        // Destroy trees or vegetation that overlap with the structure's placement area
+                        DestroyNearbyVegetation(hit.point, SpartoiCampPrefab);
+
+                        // Spawn the structure if the area is flat
+                        GameObject entrance = Instantiate(SpartoiCampPrefab, hit.point, SpartoiCampPrefab.transform.rotation);
                         entrance.transform.parent = transform;
                         placed = true; // Mark as placed to stop further attempts
                     }
