@@ -1,5 +1,8 @@
 {
   "dependencies": {
+    "com.meta.movement": "https://github.com/oculus-samples/Unity-Movement.git",
+    "com.meta.xr.sdk.core": "71.0.0",
+    "com.meta.xr.sdk.interaction.ovr": "71.0.0",
     "com.unity.collab-proxy": "2.4.4",
     "com.unity.feature.development": "1.0.1",
     "com.unity.mobile.android-logcat": "1.4.3",
