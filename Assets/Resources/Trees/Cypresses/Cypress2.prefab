@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2292085835560811062}
   - component: {fileID: 4507207980214315107}
   - component: {fileID: 8803873576364474086}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cypress2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,7 +93,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 824153957332189116}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cypress2
   m_TagString: Cypress
   m_Icon: {fileID: 0}
@@ -110,7 +110,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2292085835560811062}

@@ -8,6 +8,8 @@ TagManager:
   - Enemy
   - Weapon
   - Entity
+  - Cypress
+  - Water
   layers:
   - Default
   - TransparentFX
