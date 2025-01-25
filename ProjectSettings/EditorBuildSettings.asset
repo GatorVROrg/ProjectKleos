@@ -14,6 +14,11 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/CombatTest.unity
     guid: 2b2be21de326226468190bee8278ef3e
+    path: Assets/Scenes/MultiplayerTesting.unity
+    guid: f54de5d9891a36a4d818ae5732e10f66
+  - enabled: 1
+    path: Assets/Scenes/ResourceGatheringTesting.unity
+    guid: 28c83c9b87319ff4288bf87977e2f3e0
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: a3378edecc329424987bd5b7410ad615, type: 2}
     com.unity.input.settings: {fileID: 11400000, guid: 6beb8ed29bea83b418ec8748abc21537, type: 2}
