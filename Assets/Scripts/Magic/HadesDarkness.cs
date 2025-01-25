@@ -27,7 +27,7 @@ public class HadesDarkness : MonoBehaviour
 
     void Update()
     {
-        if(PM.HasPoseidon)
+        if(PM.HasHades)
         {
             if(LeftTrigger.action.ReadValue<float>() == 1 && RightTrigger.action.ReadValue<float>() == 1&& !onCooldown)
             {
