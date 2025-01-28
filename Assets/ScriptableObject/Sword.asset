@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Sword
   damage: 20
-  mass: 5
+  mass: 1
