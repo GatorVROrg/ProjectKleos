@@ -16,6 +16,7 @@ public class SingleIslandTerrain : MonoBehaviour
 
     void Start() 
     {
+        
         mapGenerator = FindObjectOfType<MapGenerator>();
 
         chunkSize = MapGenerator.mapChunkSize - 1;
@@ -23,6 +24,7 @@ public class SingleIslandTerrain : MonoBehaviour
         // Generate the entire island
         GenerateIsland();
     }
+
 
     void GenerateIsland() 
     {

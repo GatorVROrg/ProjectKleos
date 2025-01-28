@@ -29,6 +29,11 @@ public class VegetationGenerator : MonoBehaviour
     public float MaxRockHeight = 90f;
 
     private List<GameObject> vegetation = new();
+
+    public void Start()
+    {
+        GenerateVegetation();
+    }
     
     public void GenerateVegetation()
     {
