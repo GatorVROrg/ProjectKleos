@@ -30,7 +30,7 @@ public class VegetationGenerator : MonoBehaviour
 
     private List<GameObject> vegetation = new();
     
-    public void GenerateVegetation()
+    public void Start()
     {
         CypressTreePrefabs = new List<GameObject>
         {

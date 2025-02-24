@@ -130,6 +130,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2001535366}
     m_Modifications:
+    - target: {fileID: 1553470957744389133, guid: 14f0c62451c13114db01c99fb7715806, type: 3}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3173962782943789228, guid: 14f0c62451c13114db01c99fb7715806, type: 3}
       propertyPath: m_Name
       value: ZeusAltar
@@ -202,7 +206,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!64 &432768490
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -245,7 +249,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 85aefd9b454874d4d93188b32a6f4077, type: 2}
+  - {fileID: 2100000, guid: fb61f0b123e35f64394cb2853df7d34c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -302,8 +306,7 @@ GameObject:
   - component: {fileID: 626469684}
   - component: {fileID: 626469683}
   - component: {fileID: 626469686}
-  - component: {fileID: 626469687}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: Island
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -328,7 +331,7 @@ TerrainCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_TerrainData: {fileID: 15600000, guid: ad4e86d95d91d0e4bbc7c76b72a264c8, type: 2}
+  m_TerrainData: {fileID: 15600000, guid: 439f2832360cd3a40b72c0194b5c13ae, type: 2}
   m_EnableTreeColliders: 1
 --- !u!218 &626469684
 Terrain:
@@ -339,7 +342,7 @@ Terrain:
   m_GameObject: {fileID: 626469682}
   m_Enabled: 1
   serializedVersion: 6
-  m_TerrainData: {fileID: 15600000, guid: ad4e86d95d91d0e4bbc7c76b72a264c8, type: 2}
+  m_TerrainData: {fileID: 15600000, guid: 439f2832360cd3a40b72c0194b5c13ae, type: 2}
   m_TreeDistance: 5000
   m_TreeBillboardDistance: 50
   m_TreeCrossFadeLength: 5
@@ -418,20 +421,39 @@ MonoBehaviour:
   MaxStones: 8000
   MaxRocks: 8000
   TreeSpawnRadius: 2000
-  MinTreeHeight: 5
+  MinTreeHeight: 4
   MaxCypressHeight: 20
   MaxOliveHeight: 15
   MinStoneHeight: 0
   MaxStoneHeight: 10
-  MinRockHeight: 5
+  MinRockHeight: 0
   MaxRockHeight: 15
---- !u!64 &626469687
+--- !u!1 &686796478
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 686796482}
+  - component: {fileID: 686796481}
+  - component: {fileID: 686796480}
+  - component: {fileID: 686796479}
+  m_Layer: 0
+  m_Name: Water
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!64 &686796479
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 626469682}
+  m_GameObject: {fileID: 686796478}
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -446,45 +468,28 @@ MeshCollider:
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
---- !u!1 &834177157
-GameObject:
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &686796480
+MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 834177159}
-  - component: {fileID: 834177158}
-  m_Layer: 0
-  m_Name: Screenshot 2025-01-27 190913 (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!212 &834177158
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 834177157}
+  m_GameObject: {fileID: 686796478}
   m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
+  m_RayTracingMode: 2
   m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 96d6bf92ef637f34c8e5c57019e2afa9, type: 2}
+  - {fileID: 2100000, guid: 2a60db5140593d34c929d38c645b79d8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -497,7 +502,7 @@ SpriteRenderer:
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
   m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 0
+  m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -505,32 +510,30 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 5a480f0d1319b4642b63fc795ee8443d, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 9.41, y: 5.64}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
---- !u!4 &834177159
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &686796481
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 686796478}
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &686796482
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 834177157}
+  m_GameObject: {fileID: 686796478}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 5, z: 0}
-  m_LocalScale: {x: 100, y: 100, z: 100}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 2, z: 0}
+  m_LocalScale: {x: 100, y: 1, z: 100}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &840243227
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -539,6 +542,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2001535366}
     m_Modifications:
+    - target: {fileID: 438039469827363556, guid: 8ce661fec44a4bf46bcff3a2e31643da, type: 3}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3387333839058545297, guid: 8ce661fec44a4bf46bcff3a2e31643da, type: 3}
       propertyPath: m_Name
       value: HadesAltar
@@ -639,6 +646,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1921706806205837108, guid: 7073c93ef341e4c4fbf38f381c5fe8d0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1955248542407471544, guid: 7073c93ef341e4c4fbf38f381c5fe8d0, type: 3}
+      propertyPath: m_UseGravity
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6551502186455657718, guid: 7073c93ef341e4c4fbf38f381c5fe8d0, type: 3}
@@ -1277,7 +1288,7 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 1730208568}
-  - {fileID: 834177159}
   - {fileID: 626469685}
   - {fileID: 432768493}
   - {fileID: 2001535366}
+  - {fileID: 686796482}

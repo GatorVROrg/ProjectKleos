@@ -108,7 +108,7 @@ public class SingleIslandTerrain : MonoBehaviour
                 }
 
                 // Generate vegetation and structures
-                vegetationGenerator.GenerateVegetation();
+                //vegetationGenerator.GenerateVegetation();
                 structureGenerator.GenerateStructures();
             }
         }

@@ -167,7 +167,7 @@ public class EndlessTerrain : MonoBehaviour
 						}
 					}
 				}		
-                vegetationGenerator.GenerateVegetation();
+                //vegetationGenerator.GenerateVegetation();
                 structureGenerator.GenerateStructures();
 				SetVisible(visible);
 			}
