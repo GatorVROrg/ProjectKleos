@@ -110,17 +110,6 @@ public class MapGenerator : MonoBehaviour {
 		return new MapData(noiseMap);
 	}
 
-	void OnValidate() {
-		if (lacunarity < 1) {
-			lacunarity = 1;
-		}
-		if (octaves < 0) {
-			octaves = 0;
-		}
-		// Vector2Int Size = new Vector2Int(mapChunkSize, mapChunkSize);
-		// falloffMap = FalloffGenerator.GenerateFalloffMap (Size, fallOffStart, fallOffEnd);
-	}
-
 	struct MapThreadInfo<T> {
 		public readonly Action<T> callback;
 		public readonly T parameter;
