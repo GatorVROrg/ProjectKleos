@@ -7,6 +7,10 @@ TagManager:
   - Olive
   - Cypress
   - Water
+  - Weapon
+  - Enemy
+  - Entity
+  - Resource
   layers:
   - Default
   - TransparentFX
@@ -14,7 +18,13 @@ TagManager:
   - Player
   - Water
   - UI
+  - Body
   - Ground
+  - Grabbable
+  - HiddenMesh
+  - Character
+  - MirroredCharacter
+  - Resources
   - 
   - 
   - 
