@@ -65,6 +65,7 @@ public class VegetationGenerator : MonoBehaviour
         GenerateVegetationOfType(OliveTreePrefabs, MaxOliveTrees, MinTreeHeight, MaxOliveHeight, "Olive", 1);
         GenerateVegetationOfType(StonePrefabs, MaxStones, MinStoneHeight, MaxStoneHeight, "Stone", 1);
         GenerateVegetationOfType(RockPrefabs, MaxRocks, MinRockHeight, MaxRockHeight, "Rock", 1);
+        Debug.Log("Vegetated");
     }
 
     private void GenerateVegetationOfType(List<GameObject> prefabs, int maxCount, float minHeight, float maxHeight, string tag, int clusterSize)

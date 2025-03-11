@@ -306,12 +306,12 @@ GameObject:
   - component: {fileID: 626469684}
   - component: {fileID: 626469683}
   - component: {fileID: 626469686}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Island
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!154 &626469683
 TerrainCollider:
